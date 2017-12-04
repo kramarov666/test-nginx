@@ -62,7 +62,6 @@ EXPOSE 443
 COPY nginx.conf /nginx/conf/
 COPY index.html /nginx/html/
 
-# ***** CLEANUP *****
 RUN rm -rf /nginx-${VER_NGINX}
 RUN rm -rf /LuaJIT-${VER_LUAJIT}
 RUN rm -rf /${NGINX_DEVEL_KIT}
