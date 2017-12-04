@@ -1,17 +1,16 @@
+node {
+    def app
 
-pipeline 
-{
-agent none
- stages
-    {
-   stage(' Build')
-       {
-     agent {
-            app = docker.build("kramarov555/test-nginx") 
-           }
-        steps {
-                echo 'build docker file'
-            }
-       }
-   }
+   
+    stage('Build image') {
+        /* This builds the actual image; synonymous to
+         * docker build on the command line */
+
+        app = docker.build("kramarov555/test-nginx")
+    }
+
+    
+
+    
+   
 }
