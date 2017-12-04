@@ -69,6 +69,6 @@ RUN rm -rf /${NGINX_DEVEL_KIT}
 RUN rm -rf /${LUA_NGINX_MODULE}
 # TODO: Uninstall build only dependencies?
 # TODO: Remove env vars used only for build?
-
+TAG kramarov555/test-nginx
 # This is the default CMD used by nginx:1.9.2 image
 CMD ["nginx", "-g", "daemon off;"]
