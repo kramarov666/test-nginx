@@ -1,10 +1,10 @@
 # Based on manual compile instructions at http://wiki.nginx.org/HttpLuaModule#Installation
-FROM ubuntu:14.04
+FROM ubuntu:xenial
 
-ENV VER_NGINX_DEVEL_KIT=0.2.19
-ENV VER_LUA_NGINX_MODULE=0.9.16
-ENV VER_NGINX=1.7.10
-ENV VER_LUAJIT=2.0.4
+ENV VER_NGINX_DEVEL_KIT=0.3.0
+ENV VER_LUA_NGINX_MODULE=0.10.12rc1
+ENV VER_NGINX=1.13.6
+ENV VER_LUAJIT=2.0.5
 
 ENV NGINX_DEVEL_KIT ngx_devel_kit-${VER_NGINX_DEVEL_KIT}
 ENV LUA_NGINX_MODULE lua-nginx-module-${VER_LUA_NGINX_MODULE}
@@ -59,6 +59,8 @@ RUN ln -s ${NGINX_ROOT}/sbin/nginx /usr/local/sbin/nginx
 WORKDIR ${WEB_DIR}
 EXPOSE 80
 EXPOSE 443
+COPY nginx.conf /nginx/conf/
+COPY index.html /nginx/html/
 
 # ***** CLEANUP *****
 RUN rm -rf /nginx-${VER_NGINX}
