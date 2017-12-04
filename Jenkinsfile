@@ -6,8 +6,8 @@ agent none
     {
    stage(' Build')
        {
-     agent { dockerfile filename 'Dockerfile'
-             args: '-t kramarov555/test-nginx'
+     agent {
+            app = docker.build("kramarov555/test-nginx") 
            }
         steps {
                 echo 'build docker file'
