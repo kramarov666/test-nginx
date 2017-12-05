@@ -5,7 +5,7 @@ node {
    stage('Build') {
        checkout scm
         app = docker.build("kramarov555/test-nginx")
-        docker images
+       sh('docker images')
     }
 
    stage('Dockerize') {
