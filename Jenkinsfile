@@ -16,7 +16,7 @@ node {
     }
 
   stage('Deploy') {
-       /bin/bash deploy.sh 
+        sh('deploy.sh') 
     }
 
 
