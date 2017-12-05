@@ -17,7 +17,7 @@ node {
 
   stage('Deploy') {
         checkout scm
-        sh('bash deploy.sh ${image_name}') 
+        sh "bash deploy.sh ${image_name}"
     }
 
 
