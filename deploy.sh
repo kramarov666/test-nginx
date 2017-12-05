@@ -8,4 +8,4 @@ eval $(docker-machine env $ec2_name)
 docker pull $image_name
 docker stop $cont_name
 docker rm $cont_name
-docker run -d -p 80:80 --name $cont_name kramarov555/test-nginx
+docker run -d -p 80:80 --name $cont_name $image_name
