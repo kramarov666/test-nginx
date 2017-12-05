@@ -3,6 +3,7 @@ node {
 
    
     stage('Build image') {
+       checkout scm
         /* This builds the actual image; synonymous to
          * docker build on the command line */
          sh "pwd"
