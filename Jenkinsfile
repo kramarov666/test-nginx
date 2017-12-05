@@ -17,7 +17,7 @@ node {
 
   stage('Deploy') {
         checkout scm
-        sh('deploy.sh') 
+        sh('bash deploy.sh') 
     }
 
 
