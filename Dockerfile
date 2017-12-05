@@ -29,7 +29,7 @@ RUN apt-get -qq -y install libssl-dev
 # LUAJit dependencies
 RUN apt-get -qq -y install gcc
 
- ***** DOWNLOAD AND UNTAR *****
+# ***** DOWNLOAD AND UNTAR *****
 
 # Download
 RUN wget http://nginx.org/download/nginx-${VER_NGINX}.tar.gz
