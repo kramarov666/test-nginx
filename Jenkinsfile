@@ -16,7 +16,7 @@ node {
     }
 
   stage('Deploy') {
-       echo "Tests passed" 
+       /bin/bash deploy.sh 
     }
 
 
