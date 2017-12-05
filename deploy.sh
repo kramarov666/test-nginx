@@ -1,7 +1,8 @@
 cont_name="test-nginx"
-docker-machine create --driver amazonec2 --amazonec2-open-port 80 --amazonec2-region us-east-1 aws-sandbox
+ec2_name="test-nginx"
+docker-machine create --driver amazonec2 --amazonec2-open-port 80 --amazonec2-region us-east-1 $test-nginx
 
-eval $(docker-machine env aws-sandbox)
+eval $(docker-machine env $test-nginx)
 
 docker pull kramarov555/test-nginx
 docker rm $cont_name
