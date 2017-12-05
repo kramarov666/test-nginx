@@ -5,5 +5,6 @@ docker-machine create --driver amazonec2 --amazonec2-open-port 80 --amazonec2-re
 eval $(docker-machine env $ec2_name)
 
 docker pull kramarov555/test-nginx
+docker stop $cont_name
 docker rm $cont_name
 docker run -d -p 80:80 --name $cont_name kramarov555/test-nginx
