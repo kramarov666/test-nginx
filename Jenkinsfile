@@ -1,10 +1,10 @@
 node {
     def app
-
+    def image_name = "kramarov555/test-nginx"
    
    stage('Build') {
        checkout scm
-        app = docker.build("kramarov555/test-nginx")
+        app = docker.build(image_name)
        sh('docker images')
     }
 
