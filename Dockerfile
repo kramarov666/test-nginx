@@ -17,7 +17,7 @@ ENV LUAJIT_INC /usr/local/include/luajit-2.0
 RUN apt-get -qq update
 RUN apt-get -qq -y install wget
 
-# ***** BUILD DEPENDENCIES *****
+ ***** BUILD DEPENDENCIES *****
 
 # Common dependencies (Nginx and LUAJit)
 RUN apt-get -qq -y install make
