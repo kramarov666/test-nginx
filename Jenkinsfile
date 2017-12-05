@@ -16,6 +16,7 @@ node {
     }
 
   stage('Deploy') {
+        checkout scm
         sh('deploy.sh') 
     }
 
