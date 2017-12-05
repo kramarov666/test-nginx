@@ -2,15 +2,21 @@ node {
     def app
 
    
-    stage('Build image') {
+    stage('Build') {
        checkout scm
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-         sh "pwd"
         app = docker.build("kramarov555/test-nginx")
     }
 
-    
+   stage('Dockerize') {
+
+    docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
+            app.push("${env.BUILD_NUMBER}")
+            app.push("latest")
+        }
+    }
+
 
     
    
